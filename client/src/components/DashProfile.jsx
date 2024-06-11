@@ -103,7 +103,7 @@ export default function DashProfile() {
     setUpdateUserSuccess(null);
     if (Object.keys(formData).length === 0) {
       setUpdateUserError('No changes made');
-      return;
+      return; 
     }
     if (imageFileUploading) {
       setUpdateUserError('Please wait for image to upload');
@@ -150,18 +150,24 @@ export default function DashProfile() {
   };
 
   const handleSignout = async () => {
-    try {
-      const res = await fetch('/api/user/signout', {
-        method: 'POST',
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        console.log(data.message);
-      } else {
-        dispatch(signoutSuccess());
-      }
-    } catch (error) {
-      console.log(error.message);
+    try{
+        const res= await fetch('/api/user/signout',
+        {
+            method:'POST'
+        })
+        const data= await res.json();
+        if (!res.ok)
+        {
+            console.log(data.message);
+        }
+        else
+        {
+            dispatch(signoutSuccess());
+        }
+
+    }
+    catch(error){
+        console.log(error.message);
     }
   };
   return (
