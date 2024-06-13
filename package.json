@@ -8,7 +8,8 @@
     "mongoose": "^8.4.1",
     "nodemon": "^3.1.3",
     "react-icons": "^5.2.1",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.23.1",
+    "recharts": "^2.12.7"
   },
   "name": "mern-blog-2",
   "version": "1.0.0",
